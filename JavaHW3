@@ -1,0 +1,29 @@
+package org.example;
+
+import java.util.Scanner;
+
+public class Main {
+
+        public static void getRadius(int r) {
+            System.out.println("The area of the circle with radius " + r + " is " + (3.14 * r * r));
+        }
+
+        static Scanner scan = new Scanner(System.in);
+        public static void main(String[] args){
+            getRadius(scan.nextInt());
+
+            Scanner input = new Scanner(System.in);
+            System.out.println("What is your name?");
+            String name = input.next();
+
+            System.out.println("Hello " +name +"!");
+// c *
+            String aus  = new String("I study Basic Java!");
+            System.out.println(aus);
+            // System.out.println(aus.length());    19
+            System.out.println(aus.charAt(18));
+
+
+            System.out.println(aus.replace('a', '*'));
+    }
+}
