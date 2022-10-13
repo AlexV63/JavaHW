@@ -1,0 +1,34 @@
+package HW_131022;
+
+import java.util.Date;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+ // Требуется написать программу, которая будет получать из командной строки текущее время
+        //(в одну переменную запишется количество текущих часов, в другую - количество текущих минут)
+        //и определять суммарное количество секунд до конца дня,
+        //суммарное количество минут до конца дня и суммарное количество часов до конца дня.
+        Date date = new Date();
+
+        int hour = date.getHours();
+        int min = date.getMinutes();
+        int sec = hour * 3600 + min * 60 ;
+
+
+        System.out.println(hour);
+        System.out.println(min);
+
+        System.out.println(sec);
+
+        // Конец дня 17 -00. или 61200 сек
+        int endDay = 17 * 3600;
+
+        int moreSec = endDay - sec;
+        int moreMin = (endDay - sec)/60;
+        int moreHour = (endDay - sec)/3600;
+
+        System.out.println("До конца рабочего дня: " +  moreSec + " секунд");
+        System.out.println("До конца рабочего дня: " +  moreMin + " минут");
+        System.out.println("До конца рабочего дня: " +  moreHour + " часов");
