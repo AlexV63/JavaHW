@@ -1,56 +1,37 @@
-package HW_111022;
+package HW_181022;
 
 import java.util.Scanner;
 
+
 public class Main {
-
-// First level: 1. введите слово, используя сканер, состоящий из четного количества букв (проверьте количество букв в слове - вывести в консоль количество).
-// Получить слово, состоящее из первой половины слова и второй половины слова. Распечатайте их в консоль.
-
     public static void main(String[] args) {
+
+        //Создайте две переменные "isWeekend" и "isRain", обе имеют тип boolean, значения которых можно получить из командной строки.
+        // Создайте переменную "canWalk", значение которой должно быть истинным,
+        // если это выходной день (isWeekend=true) и не идет дождь (isRain=false), и ложным (для переменной "canWalk" в любом другом случае.
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите слово");
-        String line = scanner.nextLine();
+        System.out.println("Сегодня выходной? : ");
 
-        int length = line.length( ); // length == четное число
-        int x = length / 2;
-        int y = length % 2;
+        Boolean isWeekend = scanner.nextBoolean();
 
-        if (y == 0)
-            System.out.println(length);
-        else System.out.println("Слово с нечетным количеством букв");
+        System.out.println("Дождь идет? : ");
 
-        String front = line.substring(0, length / 2);
-        String end = line.substring(length / 2);
+        Boolean isRain = scanner.nextBoolean();
 
-        System.out.println(front);
-        System.out.println(end);
+        Boolean canWalk = false;
 
-//        Реализовать класс с функционалом, который выводит на экран результаты сложения, вычитания, умножения и деления двух чисел.
-//        Каждая из арифметических операций должна быть реализована как отдельный метод.
-
-        System.out.println("Введите число");
-        int a = scanner.nextInt();
-        System.out.println("Введите второе число");
-        int b = scanner.nextInt();
-
-        System.out.println(a + b);
-        System.out.println(a - b);
-        System.out.println(a * b);
-        System.out.println(a / b);
-
-
-//        Реализовать метод, который конвертирует сумму в евро в эквивалент долларов США (выберите курс, который соответствует дню,
-//        в который Вы выполняете это задание)
-
-        System.out.println("Введите сумму");
-        Double EUR = scanner.nextDouble();
-
-        System.out.println("Введите курс");
-        Double rate = scanner.nextDouble();
-
-        System.out.println("USD " + (EUR*rate));
-
-
+        if (isWeekend == true) {
+            if  (isRain == false){
+                canWalk = true;
+                System.out.println("We can walk is true");
+        }  else {
+                canWalk = false;
+                System.out.println("We can walk is false");
+           }
+        }  else {
+            canWalk = false;
+            System.out.println("We can walk is false");
+        }
     }
 }
