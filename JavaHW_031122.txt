@@ -1,0 +1,28 @@
+package HW_03112022;
+
+import java.util.Random;
+
+public class HW_03112022 {
+
+    //    First level: Создайте массив из 15 случайных целых чисел из отрезка от 0 до 9 включительно.
+//    Подсчитайте сколько в массиве чётных элементов и выведете это количество на экран на отдельной строке.
+//    Прошу зафиксировать seed любым удобным способом для наиболее корректного воспроизведения решения
+//
+    public static void main(String[] args) {
+
+        //   int [] firstArray = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] numArray = new int[15];
+        Random r = new Random(7);        // Используется seed=7
+        int count = 0;
+
+        for (int i = 0; i < 15; i++) {
+            numArray[i] = r.nextInt(10);
+            System.out.print(numArray[i]);
+            if (numArray[i]%2 ==0) {
+                count++;
+            }
+        }
+        System.out.println(" ");
+        System.out.println(count + " четных элементов");
+    }
+}
